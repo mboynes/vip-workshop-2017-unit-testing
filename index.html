@@ -63,7 +63,7 @@
 							What we're going to cover
 							<ul>
 								<li>Using WordPress' core test suite</li>
-								<li>WP_UnitTestCase and other TestCases</li>
+								<li>WP_UnitTestCase</li>
 								<li>Doubles</li>
 								<li>Assorted utilities</li>
 							</ul>
@@ -72,37 +72,6 @@
 							<p>Install <strike>Quickstart</strike> VVV if you don't have a way to run PHPUnit already</p>
 						</li>
 					</ul>
-				</section>
-
-				<section>
-					<section>
-						<h2>Operational Definitions</h2>
-						<p><strong>Unit Tests</strong></p>
-						<div>
-							<blockquote>A unit test is an automated piece of code that invokes the unit of work being tested, and then checks some assumptions about a single end result of that unit. A unit test is almost always written using a unit testing framework. It can be written easily and runs quickly. It’s trustworthy, readable, and maintainable. It’s consistent in its results as long as production code hasn’t changed.</blockquote>
-							<p><em>&mdash; The Art of Unit Testing, Second Edition</em></p>
-						</div>
-					</section>
-
-					<section>
-						<h2>Operational Definitions</h2>
-						<p><strong>Integration Tests</strong></p>
-						<div>
-							<blockquote>Integration testing is testing a unit of work without having full control over all of it and using one or more of its real dependencies, such as time, network, database, threads, random number generators, and so on.</blockquote>
-							<p><em>&mdash; The Art of Unit Testing, Second Edition</em></p>
-						</div>
-					</section>
-
-					<section>
-						<h2>Operational Definitions</h2>
-						<h3>Test Doubles</h3>
-						<ul>
-							<li><strong>Stub:</strong> This returns predefined values for the method that is called or null for other methods.</li>
-							<li class="fragment"><strong>Spy:</strong> This is similar to a stub, but remembers returned values that can be verified later.</li>
-							<li class="fragment"><strong>Mock:</strong> A stub with expectations. An expectation is the specification of the method on when and how it should be called during a test execution.</li>
-						</ul>
-						<p><em>&mdash; PHPUnit Essentials</em></p>
-					</section>
 				</section>
 
 				<section>
@@ -198,102 +167,16 @@ class My_Tests extends PHPUnit_Framework_TestCase {
 							<li class="fragment">Unsets current user</li>
 						</ul>
 					</section>
-
-					<section data-transition="none">
-						<h2>WP_UnitTestCase</h2>
-						<h3>Assertions</h3>
-
-						<ul>
-							<li class="fragment"><code>assertWPError</code></li>
-							<li class="fragment"><code>assertNotWPError</code></li>
-							<li class="fragment"><code>assertIXRError</code></li>
-							<li class="fragment"><code>assertNotIXRError</code></li>
-							<li class="fragment"><code>assertEqualFields</code></li>
-						</ul>
-					</section>
-
-					<section data-transition="none">
-						<h2>WP_UnitTestCase</h2>
-						<h3>Assertions</h3>
-
-						<ul>
-							<li><code>assertEqualSets</code></li>
-							<li class="fragment"><code>assertEqualSetsWithIndex</code></li>
-							<li class="fragment"><code>assertDiscardWhitespace</code></li>
-							<li class="fragment"><code>assertNonEmptyMultidimensionalArray</code></li>
-							<li class="fragment"><code>assertQueryTrue</code></li>
-						</ul>
-					</section>
-
-					<section data-transition="none">
-						<h2>WP_UnitTestCase</h2>
-						<h3>Factories</h3>
-
-						<p><em>We'll get to these in a minute...</em></p>
-					</section>
-
-					<section data-transition="none">
-						<h2>WP_UnitTestCase</h2>
-						<h3>Helpers</h3>
-
-						<ul>
-							<li><code>WP_UnitTestCase::go_to( $url )</code></li>
-							<li><code>WP_UnitTestCase::reset_post_types()</code></li>
-							<li><code>WP_UnitTestCase::reset_taxonomies()</code></li>
-							<li><code>WP_UnitTestCase::reset_post_statuses()</code></li>
-							<li><code>WP_UnitTestCase::reset__SERVER()</code></li>
-							<li><code>WP_UnitTestCase::set_permalink_structure( $structure = '' )</code></li>
-						</ul>
-					</section>
 				</section>
 
 				<section>
-					<section data-transition="none">
-						<h2>What else core brings to the table</h2>
-						<ul>
-							<li class="fragment">Helpers</li>
-							<li class="fragment">Doubles</li>
-							<li class="fragment">Additional TestCase classes</li>
-						</ul>
-					</section>
-
-					<section data-transition="none">
-						<h2>What else core brings to the table</h2>
-						<h3>Helpers</h3>
-
-						<ul>
-							<li><code>get_echo( $callable, $args )</code></li>
-							<li><code>rand_str( $length )</code></li>
-							<li><code>rand_long_str( $length )</code></li>
-						</ul>
-					</section>
-
-					<section data-transition="none">
-						<h2>What else core brings to the table</h2>
-						<h3>Mocks &amp; Spies</h3>
-
-						<ul>
-							<li><code>MockAction</code></li>
-							<li><code>MockPHPMailer</code></li>
-							<li><code>WP_Filesystem_MockFS</code></li>
-							<li><code>WP_Image_Editor_Mock</code></li>
-							<li><code>Spy_REST_Server</code></li>
-						</ul>
-					</section>
-
-					<section data-transition="none">
-						<h2>What else core brings to the table</h2>
-						<h3>Additional TestCase Classes</h3>
-
-						<ul>
-							<li><code>WP_Ajax_UnitTestCase</code></li>
-							<li><code>WP_Canonical_UnitTestCase</code></li>
-							<li><code>WP_XMLRPC_UnitTestCase</code></li>
-							<li><code>WP_Test_REST_TestCase</code></li>
-							<li><code>WP_Test_REST_Controller_Testcase</code></li>
-							<li><code>WP_Test_REST_Post_Type_Controller_Testcase</code></li>
-						</ul>
-					</section>
+					<h2>What else core brings to the table</h2>
+					<ul>
+						<li class="fragment">Additional TestCase classes (Ajax, REST, etc.)</li>
+						<li class="fragment">Doubles</li>
+						<li class="fragment">Other helpers/utilities</li>
+					</ul>
+					<p class="fragment"><code>git://develop.git.wordpress.org/</code></p>
 				</section>
 
 				<section>
@@ -302,6 +185,7 @@ class My_Tests extends PHPUnit_Framework_TestCase {
 					<ul>
 						<li class="fragment">Testing a plugin, Alliance of Magicians</li>
 						<li class="fragment">Provides important functionality for the Alliance's website</li>
+						<li class="fragment">Plugin was scaffolded with WP-CLI<br /><code>wp scaffold plugin</code></li>
 					</ul>
 				</section>
 
@@ -370,6 +254,7 @@ function test_factories() {
 							<li>Posts not of the post type <code>magician</code> should return false</li>
 						</ol>
 						<p>Reminder: <code>self::factory()->post->create( $args )</code></p>
+						<p><code>git clone git@github.com:mboynes/aom-plugin.git</code></p>
 					</section>
 
 					<section data-transition="none">
@@ -472,7 +357,10 @@ function test_two() {
     $this->go_to( get_permalink( $post_id ) );
 
     $this->assertQueryTrue( 'is_single', 'is_singular' );
-    $this->assertSame( AOM_PLUGIN_DIR . '/templates/single-magician.php', get_single_template() );
+    $this->assertSame(
+        AOM_PLUGIN_DIR . '/templates/single-magician.php',
+        get_single_template()
+    );
 }
 						</code></pre>
 					</section>
@@ -493,6 +381,19 @@ function test_output() {
         echo $foo . 'bar';
     }, [ 'foo' ] );
     $this->assertSame( 'foobar', $result );
+}
+						</code></pre>
+					</section>
+
+					<section data-transition="none">
+						<h2>Challenge 3: Testing Output</h2>
+						<p><code>WP_UnitTestCase::assertDiscardWhitespace()</code></p>
+						<pre><code data-trim class="php">
+function test_whitespace() {
+	$this->assertDiscardWhitespace(
+	    "<p>\n\t<span>Foo Bar</span>\n</p>",
+	    '<p><span>Foo Bar</span></p>'
+	);
 }
 						</code></pre>
 					</section>
@@ -539,8 +440,6 @@ function test_three() {
 						<ul>
 							<li><code>expectOutputRegex( string $regularExpression )</code></li>
 							<li><code>expectOutputString( string $expectedString )</code></li>
-							<li><code>setOutputCallback( callable $callback )</code></li>
-							<li><code>getActualOutput()</code></li>
 						</ul>
 					</section>
 
@@ -584,9 +483,9 @@ function test_actions() {
     $ma = new MockAction();
     add_action( 'hear_wonder', [ $ma, 'action' ], 10, 1 );
     do_action( 'hear_wonder', 'in_dumbwaiter' );
-    $this->assertEquals( 1, $ma->get_call_count() );
-    $this->assertEquals( [ 'hear_wonder' ], $ma->get_tags() );
-    $this->assertEquals( [ [ 'in_dumbwaiter' ] ], $ma->get_args() );
+    $this->assertSame( 1, $ma->get_call_count() );
+    $this->assertSame( [ 'hear_wonder' ], $ma->get_tags() );
+    $this->assertSame( [ [ 'in_dumbwaiter' ] ], $ma->get_args() );
 }
 						</code></pre>
 					</section>
@@ -596,7 +495,7 @@ function test_actions() {
 
 						<p><strong>Assignment:</strong> </p>
 						<ol>
-							<li>Run the shortcode <code>[magician]</code></li>
+							<li>Run the shortcode <code>[magician id="..."]</code></li>
 							<li>Verify that the filter <code>aom_magician_shortcode</code> fires</li>
 						</ol>
 						<p>Got more time? Experiment with the other methods</p>
